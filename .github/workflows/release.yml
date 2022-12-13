@@ -36,6 +36,11 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'yarn' # Set this to npm, yarn or pnpm.
+
+      - name: Install deps
+        # Remove `&& yarn build` if you build your frontend in `beforeBuildCommand`
+        run: yarn
+
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
 
