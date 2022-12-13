@@ -5,7 +5,6 @@
 
 use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
-    WindowEvent,
 };
 
 fn main() {
