@@ -91,24 +91,6 @@ fn main() {
             _ => {}
         })
         .enable_macos_default_menu(true)
-        .build(tauri::generate_context!())
-        .expect("error while building tauri application")
-        .run(|_app_handle, event| match event {
-            tauri::RunEvent::WindowEvent {
-                label: _, event, ..
-            } => match event {
-                WindowEvent::CloseRequested { api, .. } => {
-                    api.prevent_close();
-
-                    let win = _app_handle.get_window("main").unwrap();
-
-                    win.hide().unwrap();
-                }
-                _ => {}
-            },
-            tauri::RunEvent::ExitRequested { api, .. } => {
-                api.prevent_exit();
-            }
-            _ => {}
-        });
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
 }
