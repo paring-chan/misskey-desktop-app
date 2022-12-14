@@ -1,14 +1,52 @@
 {
-  "name": "misskey-desktop",
-  "private": true,
-  "version": "0.0.0",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "tauri": "tauri",
-    "build": "tauri build"
+  "name": "pariring",
+  "description": "A desktop app for pikokr.dev",
+  "version": "0.0.3",
+  "author": {
+    "name": "pikokr",
+    "email": "paring@pikokr.dev",
+    "url": "https://ppap.dev"
   },
+  "main": "./dist/index.js",
   "devDependencies": {
-    "@tauri-apps/cli": "^1.2.2"
-  }
+    "@types/prettier": "^2",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "prettier": "^2.8.1",
+    "typescript": "4.3",
+    "zx": "^7.1.1"
+  },
+  "scripts": {
+    "dev": "zx scripts/dev.mjs",
+    "build": "zx scripts/build.mjs"
+  },
+  "build": {
+    "appId": "dev.pikokr.misskey",
+    "mac": {
+      "category": "SocialNetworking"
+    },
+    "directories": {
+      "output": "out"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "pacman",
+        "apk",
+        "zip"
+      ]
+    }
+  },
+  "win": {
+    "target": [
+      "appx",
+      "msi",
+      "squirrel",
+      "zip"
+    ]
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

@@ -1,3 +1,6 @@
 {
-  "recommendations": ["tauri-apps.tauri-vscode", "rust-lang.rust-analyzer"]
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "esbenp.prettier-vscode"
+  ]
 }
